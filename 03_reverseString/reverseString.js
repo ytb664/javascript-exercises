@@ -1,5 +1,7 @@
-const reverseString = function() {
+const reverseString = function(string) {
 
+    let reversedString = '';
+    
 };
 
 // Do not edit below this line
