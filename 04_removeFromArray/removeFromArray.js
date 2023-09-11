@@ -10,11 +10,12 @@ const removeFromArray = function() {
         let valueToRemove = arguments[i];
         // Comparing each element in the array with the stored value
         for (let j = 0; j < arrayArgument.length; j++) {
-            if (arrayArgument[j] != valueToRemove) {
+            if (arrayArgument[j] === valueToRemove) {
                 continue;
             }
 
-            endArray = arrayArgument.slice(j, 1);
+            endArray[j] = arrayArgument[j];
+            endArray = endArray.filter(Number);
         }
     }
 
