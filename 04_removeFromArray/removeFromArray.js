@@ -19,7 +19,7 @@ const removeFromArray = function() {
         }
     }
 
-    endArray = endArray.filter(Number);
+    endArray = endArray.filter(Boolean);
     return endArray;
 };
 
