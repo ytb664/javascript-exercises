@@ -2,7 +2,7 @@ const removeFromArray = function() {
 
     let argLastIndex = arguments.length - 1;
     let arrayArgument = arguments[0];
-    let endArray = [];
+    let endArray = arrayArgument;
     // Loop from the last argument and store the value to variable
     for (let i = argLastIndex; i > 0; i--) {
 
@@ -11,14 +11,15 @@ const removeFromArray = function() {
         // Comparing each element in the array with the stored value
         for (let j = 0; j < arrayArgument.length; j++) {
             if (arrayArgument[j] === valueToRemove) {
+                delete endArray[j];
                 continue;
             }
 
             endArray[j] = arrayArgument[j];
-            endArray = endArray.filter(Number);
         }
     }
 
+    endArray = endArray.filter(Number);
     return endArray;
 };
 
