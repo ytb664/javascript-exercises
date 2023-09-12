@@ -4,7 +4,9 @@ const sumAll = function() {
     const startNum = arguments[0];
     const endNum = arguments[1];
 
-    if (startNum < 0 || endNum < 0) {
+    if (startNum < 0 || endNum < 0 || typeof startNum === "string" ||
+    typeof endNum === "string" || typeof startNum === "object" ||
+    typeof endNum === "object") {
             return 'ERROR';
         }
 
