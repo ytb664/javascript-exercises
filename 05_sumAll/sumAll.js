@@ -1,23 +1,20 @@
-const sumAll = function() {
+const sumAll = function(startNum, endNum) {
 
     let sum = 0;
-    const startNum = arguments[0];
-    const endNum = arguments[1];
 
-    if (startNum < 0 || endNum < 0 || typeof startNum === "string" ||
-    typeof endNum === "string" || typeof startNum === "object" ||
-    typeof endNum === "object") {
+    if (startNum < 0 || endNum < 0 || !Number.isInteger(startNum) ||
+    !Number.isInteger(endNum)) {
             return 'ERROR';
         }
 
-    if (startNum < endNum) {
-        for (let i = startNum; i <= endNum; i++) {
-            sum += i;
-        }
-    } else if (startNum > endNum) {
-        for (let i = endNum; i <= startNum; i++) {
-            sum += i;
-        }
+    if (startNum > endNum) {
+        const temp = startNum;
+        startNum = endNum;
+        endNum = temp;
+    }
+
+    for (let i = startNum; i <= endNum; i++) {
+        sum += i;
     }
 
     return sum;
