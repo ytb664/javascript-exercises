@@ -4,22 +4,19 @@ const sumAll = function() {
     const startNum = arguments[0];
     const endNum = arguments[1];
 
-    if (startNum < endNum) {
+    if (startNum < 0 || endNum < 0) {
+            return 'ERROR';
+        }
 
+    if (startNum < endNum) {
         for (let i = startNum; i <= endNum; i++) {
             sum += i;
-        }    
-    } else if (startNum > endNum) {
-        
-        for (let i = endNum; i >= startNum; i--) {
-            sum -= i;
         }
-    } else if (startNum < 0 || endNum < 0) {
-        return "ERROR";
-    } else if (typeof startNum != Number || typeof endNum != Number) {
-        return "ERROR";
+    } else if (startNum > endNum) {
+        for (let i = endNum; i <= startNum; i++) {
+            sum += i;
+        }
     }
-
 
     return sum;
 };
