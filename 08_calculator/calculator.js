@@ -6,15 +6,29 @@ const subtract = function(num1, num2) {
   return num1 - num2;
 };
 
-const sum = function() {
-	
+const sum = function(arr) {
+  let newArray = Array.from(arr);
+  let total = 0;
+
+  for (let i = 0; i < newArray.length; i++) {
+    total += newArray[i];
+  }
+
+  return total;
 };
 
-const multiply = function() {
+const multiply = function(arr) {
+  let multiplyArray = Array.from(arr);
+  let result = 1;
 
+  for (let el of multiplyArray) { 
+    result *= el;
+  }
+
+  return result;
 };
 
-const power = function() {
+const power = function(base, thePower) {
 	
 };
 
