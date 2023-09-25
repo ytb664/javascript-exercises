@@ -29,11 +29,17 @@ const multiply = function(arr) {
 };
 
 const power = function(base, thePower) {
-	Math.pow(base, thePower);
+	return Math.pow(base, thePower);
 };
 
-const factorial = function() {
-	
+const factorial = function(a) {
+  let result = 1;
+
+  for (let i = 1; i <= a; i++) {
+    result *= i;
+  }
+
+  return result;
 };
 
 // Do not edit below this line
