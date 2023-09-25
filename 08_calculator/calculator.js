@@ -29,7 +29,7 @@ const multiply = function(arr) {
 };
 
 const power = function(base, thePower) {
-	
+	Math.pow(base, thePower);
 };
 
 const factorial = function() {
