@@ -1,17 +1,24 @@
 const findTheOldest = function(people) {
 
     for (let el of people) {
+        if (el.yearOfDeath === undefined) el.yearOfDeath = 2023;
         el.age = el.yearOfDeath - el.yearOfBirth;
     }
 
-    function getFirstAge(arr) {
-        this[0].age;
+    let oldestAge = 0;
+
+    for (let i = 0; i < people.length; i++) {
+        if (i === 0) {
+            oldestAge = people[i].age;
+            continue;
+        }
+
+        if (oldestAge < people[i].age) {
+            oldestAge = people[i].age;
+        }
     }
-    let firstAge = people[0].age;
-    let result = people.filter(item => item.age > firstAge);
-
-
-    result = result.filter(item => item.age >= result[0].age);
+    
+    let result = people.filter(item => item.age >= oldestAge);
 
     return result[0];
 };
